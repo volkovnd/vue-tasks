@@ -1,6 +1,9 @@
 {
   "name": "vue-mutations-examples",
   "version": "0.1.0",
+  "repository": "https://github.com/volkovnd/vue-tasks.git",
+  "author": "Nikolay Volkov <volkovnd@yandex.ru>",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
