@@ -5,21 +5,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineEmits, defineProps, ref, withDefaults } from "vue";
-import { DEFAULT_BUTTON_STATE } from "@/constants";
+import { computed, defineEmits, defineProps, ref } from "vue";
 
 const emits = defineEmits(["click"]);
 
-const props = withDefaults(
-  defineProps<{
-    state: {
-      type: string;
-    };
-  }>(),
-  {
-    state: () => DEFAULT_BUTTON_STATE,
-  }
-);
+const props = defineProps<{
+  state: {
+    type: string;
+  };
+}>();
 
 const state = ref(props.state);
 
