@@ -5,9 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineEmits, defineProps, ref } from "vue";
-
-const emits = defineEmits(["click"]);
+import { computed, defineProps, ref } from "vue";
 
 const props = defineProps<{
   state: {
@@ -21,7 +19,5 @@ const computedClassName = computed(() => `btn-${state.value.type}`);
 
 function onClick() {
   state.value.type = "default";
-
-  emits("click");
 }
 </script>
