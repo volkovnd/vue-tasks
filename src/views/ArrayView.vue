@@ -9,9 +9,9 @@
       реализовать изменение в input
     </div>
 
-    <div v-if="isArrayChanged">Массив был изменен</div>
+    <div v-if="isArrayChanged" class="my-2">Массив был изменен</div>
 
-    <div class="form-group mb-2" v-for="(value, index) in data" :key="index">
+    <div class="form-group my-2" v-for="(value, index) in data" :key="index">
       <input type="text" class="form-control" v-model="data[index]" />
     </div>
 
