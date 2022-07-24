@@ -6,16 +6,31 @@
       Ниже должна появиться надпись, что массив был изменен, после нажатия на
       кнопку или изменения первого input, но почему-то этого не происходит.
       Вопрос, как это исправить? Еще более интересный вопрос, как правильно
-      реализовать изменение в input
+      реализовать удаление input?
     </div>
 
     <div v-if="isArrayChanged" class="my-2">Массив был изменен</div>
 
-    <div class="form-group my-2" v-for="(value, index) in data" :key="index">
-      <input type="text" class="form-control" v-model="data[index]" />
+    <div class="my-2" v-for="(value, index) in data" :key="index">
+      <div class="row">
+        <div class="col-8">
+          <input type="text" class="form-control" v-model="data[index]" />
+        </div>
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-block btn-danger"
+            @click="removeInput(index)"
+          >
+            Удалить
+          </button>
+        </div>
+      </div>
     </div>
 
-    <button class="btn btn-primary" @click="addInput">Добавить input</button>
+    <button type="button" class="btn btn-primary" @click="addInput">
+      Добавить input
+    </button>
   </div>
 </template>
 
@@ -27,6 +42,10 @@ const isArrayChanged = ref(false);
 
 function addInput() {
   data.value.push("");
+}
+
+function removeInput(index: number) {
+  data.value.splice(index, 1);
 }
 
 watch(data, () => {
