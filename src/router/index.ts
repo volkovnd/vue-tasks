@@ -11,6 +11,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "Array",
     component: () => import("@/views/ArrayView.vue"),
   },
+  {
+    path: "/form",
+    name: "Form",
+    component: () => import("@/views/FormView.vue"),
+  },
 ];
 
 const router = createRouter({

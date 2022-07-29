@@ -7,6 +7,9 @@
       <router-link class="nav-link" :to="{ name: 'Array' }">
         Array
       </router-link>
+      <router-link class="nav-link" :to="{ name: 'Form' }">
+        Form
+      </router-link>
     </nav>
     <router-view />
   </div>
